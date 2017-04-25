@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.0_23480b4fae2870b7eb8a47f8ed26d8d661a09504.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.0_aa1eb9abaa749276f0f6a33e536752e27b802dfd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.0_2f46a84c65f54adba4b16759d4f6ddd8b1ad885d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.1.0_a90b3ed52d2a08a46f6a777b911e55c3b084972f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\design\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.1.0_6a70da927d9a64391d963602d130bc7cfaef3310.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Faroh Nur Alfani\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_d79e0a6ef075c8ada77ac319fc1e92ea2c68b636.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e8c8e7dbae4194eaf46b978321feddd05c8404bc">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\instant-run_ceb816a2a2d59c3946036fd07e25819cf80b6e6a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-25.1.0_8d797e0b815cd6d0ed9384b338c96a8c3be4cfd6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.0_8ebb0ca02c044422e3715e9d65a9d49911174afa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\de.hdodenhof-circleimageview-1.3.0_333d71c9276d2de4ac550dcb44a1fce89025a42f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.0_92b6e806d0dcee66b0ea1747eaaa456fc863c764.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.0_5fcb92ad418e09b1e4118a08b7d1b609e166d2ce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.0_0a9b3e2569d9330f3175a77a7a06285b24344c95.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.0_4301846a2b0afd5299c358561d99c29eb35e9940.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7036c88120b0d5e3cbdbd9acf6d743357090e6c3">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_7f361698ed948340a4998db5a56d11bf2eaf5303.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="D:\PERKULIAHAN\AKADEMIS v.4\Pemrograman Aplikasi Piranti Bergerak\tampah-app\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.0_2854c551e80e92c2b200b1e78d29e05f604cbc22.jar" />
+    </item>
+
+</items>

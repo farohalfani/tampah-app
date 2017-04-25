@@ -7,8 +7,15 @@
         android:icon="@mipmap/ic_launcher"
         android:label="tampah"
         android:supportsRtl="true"
+
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".DrawerMenu">
+        <activity
+            android:name=".DrawerMenu"
+            android:theme="@style/AppTheme"
+        />
+
+        <activity android:name=".LoginActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -17,7 +24,13 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_drawer_menu"
-            android:theme="@style/AppTheme"></activity>
-    </application>
+            android:theme="@style/AppTheme">
+        </activity>
 
+            <!--android:name=".SideMenu"></android:name>-->
+            <!--android:label="@string/title_activity_side_menu"-->
+            <!--<android:theme="@style/AppTheme.NoActionBar"></activity>-->
+
+        <activity android:name=".RegisterActivity"></activity>
+    </application>
 </manifest>
