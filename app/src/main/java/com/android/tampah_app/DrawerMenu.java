@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class DrawerMenu extends AppCompatActivity
-
         implements NavigationView.OnNavigationItemSelectedListener {
 
     NavigationView navigationView = null;
@@ -42,16 +41,6 @@ public class DrawerMenu extends AppCompatActivity
         getSupportActionBar().setLogo(R.drawable.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setTitle("");
-//        setContentView(R.layout.activity_main);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -109,14 +98,12 @@ public class DrawerMenu extends AppCompatActivity
             fragmentTransaction.commit();
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-            //Set the fragment initially
+
+        } else if (id == R.id.nav_slideshow) {
             GalleryFragment fragment = new GalleryFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-
-        } else if (id == R.id.nav_slideshow) {
-
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
@@ -129,9 +116,4 @@ public class DrawerMenu extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//
-//    }
 }
