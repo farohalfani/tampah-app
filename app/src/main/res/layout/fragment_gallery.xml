@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.tampah_app.RegisterActivity">
+
+
+
+    <Button
+        android:text="LANJUTKAN"
+        android:textColor="#FFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bLanjutkan"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@id/bLanjutkan">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/relScroll">
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:ems="10"
+                android:id="@+id/etNamaBarang"
+                android:layout_below="@+id/etName"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:hint="Nama Barang"
+                android:layout_marginBottom="@dimen/et_bottom_margin"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:layout_below="@+id/etNamaBarang"
+                android:layout_alignParentStart="true"
+                android:id="@+id/etDeskripsi"
+                android:layout_alignParentEnd="true"
+                android:hint="Deskripsi"
+                android:layout_marginBottom="@dimen/et_bottom_margin"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/etHarga"
+                android:layout_below="@+id/etDeskripsi"
+                android:layout_alignParentStart="true"
+                android:hint="Harga"
+                android:layout_marginBottom="@dimen/et_bottom_margin"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/etPeriodeSewa"
+                android:layout_below="@+id/etHarga"
+                android:layout_alignParentStart="true"
+                android:hint="Periode Sewa (Cth: 1 bulan)"
+                android:layout_marginBottom="@dimen/et_bottom_margin"/>
+
+
+            <TextView
+                android:text="Metode Pengiriman"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvMetodeKirim"
+                android:ems="10"
+                android:textSize="18dp"
+                android:layout_below="@+id/etPeriodeSewa"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/et_bottom_margin"
+                android:layout_marginLeft="5dp"
+                />
+
+            <CheckBox android:id="@+id/cbAmbilSendiri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diambil sendiri"
+                android:layout_below="@+id/tvMetodeKirim"
+                android:onClick="onCheckboxClicked"/>
+            <CheckBox android:id="@+id/cbAntarPemilik"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diantar Pemilik Barang"
+                android:onClick="onCheckboxClicked"
+                android:layout_below="@id/cbAmbilSendiri"/>
+            <CheckBox android:id="@+id/cbAntarJNE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Diantar Via JNE"
+                android:onClick="onCheckboxClicked"
+                android:layout_below="@id/cbAntarPemilik"
+                />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:ems="10"
+                android:id="@+id/etAlamatAmbil"
+                android:hint="Alamat Pengambilan"
+                android:layout_below="@+id/cbAntarJNE"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/et_bottom_margin"/>
+
+            <TextView
+                android:text="Upload Foto Barang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvUploadFoto"
+                android:ems="10"
+                android:textSize="18dp"
+                android:layout_below="@+id/etAlamatAmbil"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/et_bottom_margin"
+                android:layout_marginLeft="5dp"
+                />
+
+            <Button
+                android:text="Upload Foto"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/bUploadFoto"
+                android:layout_alignParentBottom="true"
+                android:layout_weight="1"
+                android:layout_below="@+id/tvUploadFoto"/>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/etName"
+                android:text="sewakan Barang"
+                android:textSize="34dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="@dimen/et_bottom_margin"
+                />
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="fill_parent"-->
+                <!--android:weightSum="2"-->
+                <!--android:layout_below="@id/etPhone"-->
+                <!--android:id="@+id/linTV">-->
+
+                <!--<TextView-->
+                    <!--android:text="Foto KTP"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/tvKTP"-->
+                    <!--android:textSize="16dp"-->
+                    <!--android:layout_below="@+id/tvSIMPaspor"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:layout_marginBottom="@dimen/et_bottom_margin"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:textAlignment="center"/>-->
+
+                <!--<TextView-->
+                    <!--android:text="Foto SIM/Paspor"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:id="@+id/tvSIMPaspor"-->
+                    <!--android:textSize="16dp"-->
+                    <!--android:layout_below="@+id/etPhone"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:textAlignment="center"/>-->
+
+            <!--</LinearLayout>-->
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="bottom"
+                android:weightSum="2"
+                android:layout_below="@+id/linTV"
+                android:layout_alignParentStart="true">
+
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/rel22"
+        android:gravity="bottom"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
