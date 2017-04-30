@@ -13,6 +13,7 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("");
         setContentView(R.layout.activity_register);
 
         final EditText etName = (EditText) findViewById(R.id.etName);

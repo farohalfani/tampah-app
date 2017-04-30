@@ -8,18 +8,21 @@
         android:label=""
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".InvoiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SideMenu"
+        <!--
+            activity
             android:label="@string/title_activity_side_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".RegisterActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity
+        -->
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".KetSewaActivity" />
+        <activity android:name=".PaymentConfirm"></activity>
     </application>
 
 </manifest>

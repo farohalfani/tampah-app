@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setTitle("");
         setContentView(R.layout.activity_login);
 
         final EditText etEmail = (EditText) findViewById(R.id.etEmail);
