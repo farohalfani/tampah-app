@@ -16,7 +16,9 @@ import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 public class KetSewaActivity extends AppCompatActivity implements OnClickListener {
     private EditText etFromDate;
@@ -29,6 +31,10 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
     private DatePickerDialog toDatePickerDialog;
 
     private SimpleDateFormat dateFormatter;
+    private Date startDate, endDate;
+    private long days;
+    private int position;
+    private Data data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +50,24 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         findViewsById();
 
         setDateTimeField();
+        data = new Data();
+
+        try{
+            position = data.getPosition();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
         bPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                days = endDate.getTime() - startDate.getTime();
+                String fixDays = String.valueOf(TimeUnit.DAYS.convert(days, TimeUnit.MILLISECONDS));
                 Intent placeOrderIntent = new Intent(KetSewaActivity.this, InvoiceActivity.class);
+                placeOrderIntent.putExtra("days",fixDays);
+                placeOrderIntent.putExtra("index",position);
+                placeOrderIntent.putExtra("start",dateFormatter.format(startDate));
+                placeOrderIntent.putExtra("end",dateFormatter.format(endDate));
                 KetSewaActivity.this.startActivity(placeOrderIntent);
             }
         });
@@ -84,6 +103,7 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
                 Calendar newDate = Calendar.getInstance();
                 newDate.set(year, monthOfYear, dayOfMonth);
                 etFromDate.setText(dateFormatter.format(newDate.getTime()));
+                startDate = newDate.getTime();
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
@@ -94,9 +114,12 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
                 Calendar newDate = Calendar.getInstance();
                 newDate.set(year, monthOfYear, dayOfMonth);
                 etToDate.setText(dateFormatter.format(newDate.getTime()));
+                endDate = newDate.getTime();
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -127,7 +150,7 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
 
         startActivity(new Intent(getApplicationContext(), InvoiceActivity.class));
     }
-    }
+}
 
 
 

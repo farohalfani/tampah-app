@@ -5,13 +5,12 @@
     tools:context="com.android.tampah_app.DrawerFragment">
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recyclerView"
         android:clipToPadding="false"
-        android:scrollbars="vertical"
-        >
-    </android.support.v7.widget.RecyclerView>
+        android:scrollbars="vertical" />
+
 
     <!--<GridView xmlns:android="http://schemas.android.com/apk/res/android"-->
         <!--android:id="@+id/grid_view"-->
