@@ -1,9 +1,7 @@
 package com.android.tampah_app;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 public class ItemActivity extends AppCompatActivity {
@@ -19,11 +17,6 @@ public class ItemActivity extends AppCompatActivity {
 
     final Button bSewa = (Button) findViewById(R.id.bSewa);
 
-    bSewa.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            startActivity(new Intent(this,BankActivity.class));
-        }
-    });
-    });
+
+
 }

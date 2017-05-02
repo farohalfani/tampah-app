@@ -27,7 +27,7 @@ public class InvoiceActivity extends AppCompatActivity {
 
         ((TextView)findViewById(R.id.tvOrderNo2)).setText(fromDate);
         ((TextView)findViewById(R.id.tvOrderName2)).setText(toDate);
-        ((TextView)findViewById(R.id.tvOrderDate2)).setText(note);
+        ((TextView)findViewById(R.id.tvFromDate2)).setText(note);
 
 
 
