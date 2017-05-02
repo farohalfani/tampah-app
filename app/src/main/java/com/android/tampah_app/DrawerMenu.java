@@ -100,10 +100,10 @@ public class DrawerMenu extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
-            GalleryFragment fragment = new GalleryFragment();
+            /*GalleryFragment fragment = new GalleryFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
-            fragmentTransaction.commit();
+            fragmentTransaction.commit();*/
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

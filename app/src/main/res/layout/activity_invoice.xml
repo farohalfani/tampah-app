@@ -11,7 +11,7 @@
         android:textColor="#FFFF"
         android:background="@color/colorPrimary"
         android:layout_width="fill_parent"
-        android:id="@+id/bConfirm"
+        android:id="@+id/bConfirm2"
         android:layout_alignParentBottom="true"
         android:layout_height="wrap_content"
         android:onClick="showEdit"
@@ -20,23 +20,23 @@
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/bConfirm"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin">
+        android:layout_above="@id/bConfirm2">
 
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/rel4"
-            android:layout_alignParentTop="true">
+            android:layout_alignParentTop="true"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
 
             <TextView
                 android:text="Order Anda sedang diproses"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvDone"
+                android:id="@+id/tvThanks"
                 android:layout_alignTop="@+id/ivDone"
                 android:layout_toEndOf="@+id/ivDone"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -47,7 +47,7 @@
                 android:text="Kami akan mengirimkan email untuk Anda jika barang tersedia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvDone"
+                android:layout_below="@+id/tvThanks"
                 android:layout_toEndOf="@+id/ivDone"
                 android:id="@+id/tvEmail"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
