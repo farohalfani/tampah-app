@@ -12,6 +12,7 @@ import android.widget.ImageView;
  */
 
 public class ImageAdapter extends BaseAdapter {
+
     private Context mContext;
 
     // Keep all Images in array

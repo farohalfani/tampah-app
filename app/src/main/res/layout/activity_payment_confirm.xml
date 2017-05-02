@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context="com.android.tampah_app.PaymentConfirm">
 
+
+    <!--<TextView-->
+        <!--android:text="KONFIRMASI PEMBAYARAN"-->
+        <!--android:textSize="20dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/tvPaymentConfirm"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:layout_marginTop="20dp"/>-->
+
     <Button
         android:text="konfirmasi"
         android:textColor="#FFFF"
