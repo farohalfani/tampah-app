@@ -15,15 +15,18 @@ public class ItemActivity extends AppCompatActivity {
         getSupportActionBar().setLogo(R.drawable.logo);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_item);
+
+        final Button bSewa = (Button) findViewById(R.id.bSewa);
+
+        bSewa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loginIntent = new Intent(ItemActivity.this, LoginActivity.class);
+                ItemActivity.this.startActivity(loginIntent);
+            }
+        });
+
     }
 
-    final Button bSewa = (Button) findViewById(R.id.bSewa);
 
-    bSewa.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            startActivity(new Intent(this,BankActivity.class));
-        }
-    });
-    });
 }

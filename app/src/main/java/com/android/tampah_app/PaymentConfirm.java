@@ -2,7 +2,6 @@ package com.android.tampah_app;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -23,6 +22,15 @@ public class PaymentConfirm extends AppCompatActivity implements OnClickListener
     private EditText etAccountOwner;
     private EditText etAmount;
 
+    private Button bConfirm;
+    /*private PopupWindow popupWindow;
+    private LayoutInflater layoutInflater;
+
+    private Context mContext;
+    private Activity mActivity;
+
+    private LinearLayout linearLayout;*/
+
     private DatePickerDialog payDatePickerDialog;
 
     private SimpleDateFormat dateFormatter;
@@ -42,7 +50,16 @@ public class PaymentConfirm extends AppCompatActivity implements OnClickListener
 
         setDateTimeField();
 
-        showThanksDialog();
+        bConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent thanksIntent = new Intent(PaymentConfirm.this, ThanksActivity.class);
+                PaymentConfirm.this.startActivity(thanksIntent);
+            }
+        });
+
+        //showThanksDialog();
+
     }
 
     private void findViewsById() {
@@ -53,6 +70,11 @@ public class PaymentConfirm extends AppCompatActivity implements OnClickListener
         etPayDate = (EditText) findViewById(R.id.etPayDate);
         etPayDate.setInputType(InputType.TYPE_NULL);
         etPayDate.requestFocus();
+
+        bConfirm = (Button) findViewById(R.id.bConfirm2);
+        //bOK = (Button) findViewById(R.id.bOK);
+
+        //linearLayout = (LinearLayout) findViewById(R.id.lin);
     }
 
     private void setDateTimeField() {
@@ -70,30 +92,80 @@ public class PaymentConfirm extends AppCompatActivity implements OnClickListener
     }
 
     private void showThanksDialog() {
-        Button bPaymentConfirm = (Button) findViewById(R.id.bConfirm);
-        /*bPaymentConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public
-        });
 
-        public void onClick(View view) {
-        AlertDialog.Builder mBuilder = new AlertDialog.Builder(PaymentConfirm.this);
-        View mView = getLayoutInflater().inflate(R.layout.dialog_thanks, null);
-        Button mOK = (Button) mView.findViewById(R.id.bOK);
+       /* mContext = getApplicationContext();
 
-        mOK.setOnClickListener(new View.OnClickListener() {
+        mActivity = PaymentConfirm.this;
+
+        bConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent backToHomeIntent = new Intent(PaymentConfirm.this, MainActivity.class);
-                PaymentConfirm.this.startActivity(backToHomeIntent);
+                LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
+                View customView = inflater.inflate(R.layout.popup_thanks, null);
+
+                popupWindow = new PopupWindow(
+                        customView,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                );
+
+                bOK.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view1) {
+                        popupWindow.dismiss();
+                    }
+                });
             }
-        });
+        });*/
 
-        mBuilder.setView(mView);
-        AlertDialog dialog = mBuilder.create();
-        dialog.show();*/
 
-    }
+
+        /*bConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+                ViewGroup container = (ViewGroup) layoutInflater.inflate(R.layout.popup_thanks,null);
+
+                popupWindow = new PopupWindow(container, 400, 400, true);
+                popupWindow.showAtLocation(linearLayout, Gravity.CENTER, 500, 500);
+            */
+                /*AlertDialog.Builder mBuilder = new AlertDialog.Builder(PaymentConfirm.this);
+                View mView = getLayoutInflater().inflate(R.layout.popup_thanks, null);
+
+                bOK.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view1) {
+                        Intent backToHomeIntent = new Intent(PaymentConfirm.this, MainActivity.class);
+                        PaymentConfirm.this.startActivity(backToHomeIntent);
+                    }
+                });
+
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();
+            }
+        });*/
+
+/*
+        public void onClick(View view) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(PaymentConfirm.this);
+                View mView = getLayoutInflater().inflate(R.layout.popup_thanks, null);
+                Button mOK = (Button) mView.findViewById(R.id.bOK);
+
+                mOK.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent backToHomeIntent = new Intent(PaymentConfirm.this, MainActivity.class);
+                        PaymentConfirm.this.startActivity(backToHomeIntent);
+                    }
+                });
+
+                mBuilder.setView(mView);
+                AlertDialog dialog = mBuilder.create();
+                dialog.show();*/
+
+            }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -107,8 +179,6 @@ public class PaymentConfirm extends AppCompatActivity implements OnClickListener
             payDatePickerDialog.show();
         }
     }
-
-
 
 
 }

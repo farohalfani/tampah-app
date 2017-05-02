@@ -10,6 +10,7 @@ import android.text.InputType;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
@@ -21,6 +22,7 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
     private EditText etFromDate;
     private EditText etToDate;
     private EditText etNote;
+    private Button bPlaceOrder;
     private SharedPreferences prefs;
 
     private DatePickerDialog fromDatePickerDialog;
@@ -43,6 +45,14 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
 
         setDateTimeField();
 
+        bPlaceOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent placeOrderIntent = new Intent(KetSewaActivity.this, InvoiceActivity.class);
+                KetSewaActivity.this.startActivity(placeOrderIntent);
+            }
+        });
+
         prefs = getSharedPreferences("DATA_SEWA", MODE_PRIVATE);
 
         String fromDate = prefs.getString("DARI_TANGGAL", "");
@@ -60,6 +70,8 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         etToDate.setInputType(InputType.TYPE_NULL);
 
         etNote = (EditText) findViewById(R.id.etNote);
+
+        bPlaceOrder = (Button) findViewById(R.id.bConfirm2);
     }
     private void setDateTimeField() {
         etFromDate.setOnClickListener(this);

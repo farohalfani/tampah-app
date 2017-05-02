@@ -33,13 +33,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
         bLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!etEmail.getText().toString().isEmpty() && !etPassword.getText().toString().isEmpty()) {
-                    Toast.makeText(LoginActivity.this,
+                    /*Toast.makeText(LoginActivity.this,
                             "Login berhasil",
-                            Toast.LENGTH_SHORT).show();
+                            Toast.LENGTH_SHORT).show();*/
+                    Intent loginSuccess = new Intent(LoginActivity.this, KetSewaActivity.class);
+                    LoginActivity.this.startActivity(loginSuccess);
                 } else {
                     Toast.makeText(LoginActivity.this,
                             "Kolom yang Anda isikan tidak lengkap",

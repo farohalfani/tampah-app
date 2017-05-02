@@ -27,11 +27,11 @@ public class InvoiceActivity extends AppCompatActivity {
 
         ((TextView)findViewById(R.id.tvOrderNo2)).setText(fromDate);
         ((TextView)findViewById(R.id.tvOrderName2)).setText(toDate);
-        ((TextView)findViewById(R.id.tvOrderDate2)).setText(note);
+        //((TextView)findViewById(R.id.tvOrderDate2)).setText(note);
 
 
 
-        final Button bConfirm = (Button) findViewById(R.id.bConfirm);
+        final Button bConfirm = (Button) findViewById(R.id.bConfirm2);
 
         bConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
