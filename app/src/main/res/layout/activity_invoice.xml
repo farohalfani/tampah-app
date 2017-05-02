@@ -13,7 +13,9 @@
         android:layout_width="fill_parent"
         android:id="@+id/bConfirm"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="showEdit"
+        />
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -93,10 +95,10 @@
                 android:layout_alignParentStart="true" />
 
             <TextView
-                android:text="Tanggal Pemesanan"
+                android:text="Tanggal Pesan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView10"
+                android:id="@+id/tvFromDate"
                 android:layout_below="@+id/tvOrderName2"
                 android:layout_alignParentStart="true"
                 android:textSize="18sp" />
@@ -105,8 +107,28 @@
                 android:text="dd-mm-yy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textView10"
-                android:id="@+id/tvOrderDate2"
+                android:layout_below="@+id/tvFromDate"
+                android:id="@+id/tvFromDate2"
+                android:layout_alignEnd="@+id/tvOrderName"
+                android:layout_toEndOf="@+id/linearLayout"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:text="Sampai Tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvToDate"
+                android:layout_below="@+id/tvFromDate2"
+                android:layout_alignParentStart="true"
+                android:textSize="18sp" />
+
+            <TextView
+                android:text="dd-mm-yy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvToDate"
+                android:id="@+id/tvToDate2"
                 android:layout_alignEnd="@+id/tvOrderName"
                 android:layout_toEndOf="@+id/linearLayout"
                 android:textSize="16sp"
@@ -116,7 +138,7 @@
                 android:text="Total Harga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvOrderDate2"
+                android:layout_below="@+id/tvToDate2"
                 android:layout_alignParentStart="true"
                 android:id="@+id/textView12"
                 android:textSize="18sp" />

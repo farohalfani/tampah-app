@@ -1,13 +1,15 @@
 package com.android.tampah_app;
 
 import android.app.DatePickerDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.view.Menu;
-import android.view.View.OnClickListener;
-import android.text.InputType;
 import android.app.DatePickerDialog.OnDateSetListener;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
@@ -18,6 +20,8 @@ import java.util.Locale;
 public class KetSewaActivity extends AppCompatActivity implements OnClickListener {
     private EditText etFromDate;
     private EditText etToDate;
+    private EditText etNote;
+    private SharedPreferences prefs;
 
     private DatePickerDialog fromDatePickerDialog;
     private DatePickerDialog toDatePickerDialog;
@@ -38,6 +42,13 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         findViewsById();
 
         setDateTimeField();
+
+        prefs = getSharedPreferences("DATA_SEWA", MODE_PRIVATE);
+
+        String fromDate = prefs.getString("DARI_TANGGAL", "");
+        String toDate = prefs.getString("SAMPAI_TANGGAL","");
+        String note = prefs.getString("CATATAN","");
+
     }
 
     private void findViewsById() {
@@ -47,6 +58,8 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
 
         etToDate = (EditText) findViewById(R.id.etToDate);
         etToDate.setInputType(InputType.TYPE_NULL);
+
+        etNote = (EditText) findViewById(R.id.etNote);
     }
     private void setDateTimeField() {
         etFromDate.setOnClickListener(this);
@@ -87,6 +100,20 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         } else if(view == etToDate) {
             toDatePickerDialog.show();
         }
+    }
+
+    public void saveData(View view){
+        String fromDate = etFromDate.getText().toString();
+        String toDate = etToDate.getText().toString();
+        String note = etNote.getText().toString();
+
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("DARI_TANGGAL", fromDate);
+        editor.putString("SAMPAI_TANGGAL", toDate);
+        editor.putString("CATATAN", note);
+        editor.apply();
+
+        startActivity(new Intent(getApplicationContext(), InvoiceActivity.class));
     }
     }
 

@@ -24,7 +24,9 @@
         android:layout_width="fill_parent"
         android:id="@+id/bConfirm"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="saveData"
+        />
 
     <ScrollView
         android:layout_width="fill_parent"

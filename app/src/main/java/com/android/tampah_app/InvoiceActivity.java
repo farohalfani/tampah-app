@@ -1,10 +1,12 @@
 package com.android.tampah_app;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class InvoiceActivity extends AppCompatActivity {
 
@@ -17,6 +19,18 @@ public class InvoiceActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         setContentView(R.layout.activity_invoice);
 
+        SharedPreferences prefs = getSharedPreferences("DATA_SEWA", MODE_PRIVATE);
+
+        String fromDate = prefs.getString("DARI_TANGGAL", "");
+        String toDate = prefs.getString("SAMPAI_TANGGAL","");
+        String note = prefs.getString("CATATAN","");
+
+        ((TextView)findViewById(R.id.tvOrderNo2)).setText(fromDate);
+        ((TextView)findViewById(R.id.tvOrderName2)).setText(toDate);
+        ((TextView)findViewById(R.id.tvOrderDate2)).setText(note);
+
+
+
         final Button bConfirm = (Button) findViewById(R.id.bConfirm);
 
         bConfirm.setOnClickListener(new View.OnClickListener() {
@@ -28,5 +42,8 @@ public class InvoiceActivity extends AppCompatActivity {
         });
 
 
+    }
+    public void showEdit(View view) {
+        startActivity(new Intent(getApplicationContext(), KetSewaActivity.class));
     }
 }
