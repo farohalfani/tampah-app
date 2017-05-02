@@ -13,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -50,6 +51,7 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
             public void onClick(View v) {
                 Intent placeOrderIntent = new Intent(KetSewaActivity.this, InvoiceActivity.class);
                 KetSewaActivity.this.startActivity(placeOrderIntent);
+                //checkValue();
             }
         });
 
@@ -125,7 +127,27 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         editor.putString("CATATAN", note);
         editor.apply();
 
-        startActivity(new Intent(getApplicationContext(), InvoiceActivity.class));
+
+
+        public void checkValue() {
+            if (fromDate.isEmpty() || toDate.isEmpty()) {
+                Toast.makeText(KetSewaActivity.this,
+                        "Kolom yang Anda isikan tidak lengkap",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            else {
+                startActivity(new Intent(getApplicationContext(), InvoiceActivity.class));
+            }
+            /*bPlaceOrder.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View v) {
+                                                   Intent placeOrderIntent = new Intent(KetSewaActivity.this, InvoiceActivity.class);
+                                                   KetSewaActivity.this.startActivity(placeOrderIntent);
+                                               }*/
+        }
+
+
     }
     }
 
