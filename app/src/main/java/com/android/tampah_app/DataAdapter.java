@@ -78,8 +78,9 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.MyViewHolder> 
     private void choose(int position) {
         data.setPosition(position);
         Intent intent = new Intent(mContext, ItemActivity.class);
-//        intent.putExtra("index", String.valueOf(position));
+        intent.putExtra("index", String.valueOf(position));
         mContext.startActivity(intent);
+//        Toast.makeText(mContext, String.valueOf(position), Toast.LENGTH_LONG).show();
     }
 
     @Override

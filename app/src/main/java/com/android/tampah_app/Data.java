@@ -11,17 +11,17 @@ public class Data {
     public static String[] deskripsiBrg = {"Sudah teruji di laboratoriun ITB dan IPB", "Dapat digunakan untuk memanggang roti sehari-hari. Kualitas oke punya.", "Lengkap dengan 10 cangkir. Desain elegan"
             , "Tidak mudah pecah. Jarang dipakai.", "Hemat listrik. Praktis.", "Mudah dibawa. Mudah digunakan" };
 
-    public int getPosition() {
+    private static int position;
+
+    public Data() {
+
+    }
+
+    public static int getPosition() {
         return position;
     }
 
     public void setPosition(int position) {
         this.position = position;
-    }
-
-    private int position;
-
-    public Data() {
-
     }
 }
