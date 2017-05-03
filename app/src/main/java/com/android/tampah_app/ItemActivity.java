@@ -27,10 +27,10 @@ public class ItemActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_item);
 
-        data = new Data();
+
 //        Intent intent = getIntent();
         try{
-            position = data.getPosition();
+            position = Data.getPosition();
         } catch (Exception e){
             e.printStackTrace();
         }
@@ -42,7 +42,6 @@ public class ItemActivity extends AppCompatActivity {
         hargaBrg = (TextView) findViewById(R.id.tvHarga);
 
         data = new Data();
-
         try{
             gambarBrg.setImageResource(data.gambarBrg[position]);
             namaBrg.setText(data.namaBrg[position]);
