@@ -13,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -32,9 +33,10 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
 
     private SimpleDateFormat dateFormatter;
     private Date startDate, endDate;
-    private long days;
-    private int position;
     private Data data;
+    private long days;
+    private Date date;
+    private int position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,8 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         findViewsById();
 
         setDateTimeField();
-        data = new Data();
+
+        //dateChecker();
 
         try{
             position = data.getPosition();
@@ -69,14 +72,15 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
                 placeOrderIntent.putExtra("start",dateFormatter.format(startDate));
                 placeOrderIntent.putExtra("end",dateFormatter.format(endDate));
                 KetSewaActivity.this.startActivity(placeOrderIntent);
+
             }
         });
 
-        prefs = getSharedPreferences("DATA_SEWA", MODE_PRIVATE);
+        /*prefs = getSharedPreferences("DATA_SEWA", MODE_PRIVATE);
 
         String fromDate = prefs.getString("DARI_TANGGAL", "");
         String toDate = prefs.getString("SAMPAI_TANGGAL","");
-        String note = prefs.getString("CATATAN","");
+        String note = prefs.getString("CATATAN","");*/
 
     }
 
@@ -104,6 +108,7 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
                 newDate.set(year, monthOfYear, dayOfMonth);
                 etFromDate.setText(dateFormatter.format(newDate.getTime()));
                 startDate = newDate.getTime();
+                //Data.startDate2[0] = startDate;
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
@@ -115,9 +120,24 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
                 newDate.set(year, monthOfYear, dayOfMonth);
                 etToDate.setText(dateFormatter.format(newDate.getTime()));
                 endDate = newDate.getTime();
+                //Data.endDate2[0] = endDate;
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+        /*if(!(startDate.getTime() < endDate.getTime())) {
+            Toast.makeText(KetSewaActivity.this,
+                    "Tanggal yang Anda masukkan tidak valid",
+                    Toast.LENGTH_SHORT).show();
+        }  else if (date.getTime() <= startDate.getTime() && date.getTime() >= endDate.getTime()) {
+            Toast.makeText(KetSewaActivity.this,
+                    "Barang tidak tersedia",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(KetSewaActivity.this,
+                    "Barang tersedia",
+                    Toast.LENGTH_SHORT).show();
+        }*/
 
 
     }
@@ -137,6 +157,27 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         }
     }
 
+    /*public void dateChecker() {
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(int year, int month, int day);
+        date = calendar.getTime();
+
+        if(!(startDate.getTime() < endDate.getTime())) {
+            Toast.makeText(KetSewaActivity.this,
+                    "Tanggal yang Anda masukkan tidak valid",
+                    Toast.LENGTH_SHORT).show();
+        }  else if (date.getTime() <= startDate.getTime() && date.getTime() >= endDate.getTime()) {
+            Toast.makeText(KetSewaActivity.this,
+                    "Barang tidak tersedia",
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(KetSewaActivity.this,
+                    "Barang tersedia",
+                    Toast.LENGTH_SHORT).show();
+        }
+    }*/
+
     public void saveData(View view){
         String fromDate = etFromDate.getText().toString();
         String toDate = etToDate.getText().toString();
@@ -148,9 +189,13 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         editor.putString("CATATAN", note);
         editor.apply();
 
-        startActivity(new Intent(getApplicationContext(), InvoiceActivity.class));
+
+
+
+        }
+
+
     }
-}
 
 
 

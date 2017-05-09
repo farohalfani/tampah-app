@@ -38,11 +38,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!etEmail.getText().toString().isEmpty() && !etPassword.getText().toString().isEmpty()) {
-                    /*Toast.makeText(LoginActivity.this,
-                            "Login berhasil",
-                            Toast.LENGTH_SHORT).show();*/
                     Intent loginSuccess = new Intent(LoginActivity.this, KetSewaActivity.class);
                     LoginActivity.this.startActivity(loginSuccess);
+                    Toast.makeText(LoginActivity.this,
+                            "Login berhasil",
+                            Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(LoginActivity.this,
                             "Kolom yang Anda isikan tidak lengkap",
