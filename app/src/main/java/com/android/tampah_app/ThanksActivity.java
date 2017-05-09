@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class ThanksActivity extends AppCompatActivity {
+
+    Button bBackToHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +20,7 @@ public class ThanksActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         setContentView(R.layout.activity_thanks);
 
-        final Button bBackToHome = (Button) findViewById(R.id.bBackToHome);
+        bBackToHome = (Button) findViewById(R.id.backToHomeBT);
 
         bBackToHome.setOnClickListener(new View.OnClickListener() {
             @Override

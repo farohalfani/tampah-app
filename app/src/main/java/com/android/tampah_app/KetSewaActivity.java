@@ -51,10 +51,6 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
 
         findViewsById();
 
-        setDateTimeField();
-
-        //dateChecker();
-
         try{
             position = data.getPosition();
         } catch (Exception e){
@@ -75,6 +71,8 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
 
             }
         });
+
+        setDateTimeField();
 
         /*prefs = getSharedPreferences("DATA_SEWA", MODE_PRIVATE);
 
@@ -108,43 +106,41 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
                 newDate.set(year, monthOfYear, dayOfMonth);
                 etFromDate.setText(dateFormatter.format(newDate.getTime()));
                 startDate = newDate.getTime();
-                //Data.startDate2[0] = startDate;
+                if (Data.startDate2[position] == null) {
+                    Data.startDate2[position] = startDate;
+                } else if (startDate.getTime() < Data.startDate2[position].getTime()) {
+                    Toast.makeText(KetSewaActivity.this,
+                            "Tanggal yang Anda masukkan tidak valid",
+                            Toast.LENGTH_SHORT).show();
+                    bPlaceOrder.setEnabled(false);
+                } else if (startDate.getTime() >= Data.startDate2[position].getTime() && startDate.getTime() <= Data.endDate2[position].getTime() ) {
+                    Toast.makeText(KetSewaActivity.this,
+                            "Barang tidak tersedia",
+                            Toast.LENGTH_SHORT).show();
+                    bPlaceOrder.setEnabled(false);
+                } else {
+                    bPlaceOrder.setEnabled(true);
+                    Data.startDate2[position] = startDate;
+                }
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
 
         toDatePickerDialog = new DatePickerDialog(this, new OnDateSetListener() {
-
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 Calendar newDate = Calendar.getInstance();
                 newDate.set(year, monthOfYear, dayOfMonth);
                 etToDate.setText(dateFormatter.format(newDate.getTime()));
                 endDate = newDate.getTime();
-                //Data.endDate2[0] = endDate;
+                Data.endDate2[position] = endDate;
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
-
-        /*if(!(startDate.getTime() < endDate.getTime())) {
-            Toast.makeText(KetSewaActivity.this,
-                    "Tanggal yang Anda masukkan tidak valid",
-                    Toast.LENGTH_SHORT).show();
-        }  else if (date.getTime() <= startDate.getTime() && date.getTime() >= endDate.getTime()) {
-            Toast.makeText(KetSewaActivity.this,
-                    "Barang tidak tersedia",
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(KetSewaActivity.this,
-                    "Barang tersedia",
-                    Toast.LENGTH_SHORT).show();
-        }*/
-
-
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.activity_drawer_menu_drawer, menu);
         return true;
     }
 
@@ -156,27 +152,6 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
             toDatePickerDialog.show();
         }
     }
-
-    /*public void dateChecker() {
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(int year, int month, int day);
-        date = calendar.getTime();
-
-        if(!(startDate.getTime() < endDate.getTime())) {
-            Toast.makeText(KetSewaActivity.this,
-                    "Tanggal yang Anda masukkan tidak valid",
-                    Toast.LENGTH_SHORT).show();
-        }  else if (date.getTime() <= startDate.getTime() && date.getTime() >= endDate.getTime()) {
-            Toast.makeText(KetSewaActivity.this,
-                    "Barang tidak tersedia",
-                    Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(KetSewaActivity.this,
-                    "Barang tersedia",
-                    Toast.LENGTH_SHORT).show();
-        }
-    }*/
 
     public void saveData(View view){
         String fromDate = etFromDate.getText().toString();

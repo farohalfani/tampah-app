@@ -9,9 +9,8 @@ import java.util.Date;
 
 
 public class Data {
-    private static Date calendar;
-    public static Date[] startDate2 = new Date[] {calendar, calendar, calendar};
-    public static Date[] endDate2 = new Date[] {calendar, calendar, calendar};
+    public static Date[] startDate2 = new Date[] {null, null, null, null, null, null};
+    public static Date[] endDate2 = new Date[] {null, null, null, null, null, null};
     public static String[] namaBrg = {"Dispenser","Toaster","Ceramic Set", "Toples", "Microwave", "Kompor"};
     public int[] hargaBrg = {30000,25000,15000, 10000, 25000, 15000};
     public int[] gambarBrg = {R.drawable.sample_0,R.drawable.sample_1,R.drawable.sample_2,R.drawable.sample_3,R.drawable.sample_4,R.drawable.sample_5};
