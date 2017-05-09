@@ -60,15 +60,7 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
         bPlaceOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                days = endDate.getTime() - startDate.getTime();
-                String fixDays = String.valueOf(TimeUnit.DAYS.convert(days, TimeUnit.MILLISECONDS));
-                Intent placeOrderIntent = new Intent(KetSewaActivity.this, InvoiceActivity.class);
-                placeOrderIntent.putExtra("days",fixDays);
-                placeOrderIntent.putExtra("index",position);
-                placeOrderIntent.putExtra("start",dateFormatter.format(startDate));
-                placeOrderIntent.putExtra("end",dateFormatter.format(endDate));
-                KetSewaActivity.this.startActivity(placeOrderIntent);
-
+                checkValue();
             }
         });
 
@@ -133,10 +125,48 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
                 etToDate.setText(dateFormatter.format(newDate.getTime()));
                 endDate = newDate.getTime();
                 Data.endDate2[position] = endDate;
+                if (startDate.getTime() > endDate.getTime()) {
+                    Toast.makeText(KetSewaActivity.this,
+                            "Tanggal yang Anda masukkan tidak valid",
+                            Toast.LENGTH_SHORT).show();
+                    bPlaceOrder.setEnabled(false);
+                } else {
+                    bPlaceOrder.setEnabled(true);
+                }
             }
 
         },newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
     }
+
+    private void checkValue() {
+
+        String fromDate = etFromDate.getText().toString();
+        String toDate = etToDate.getText().toString();
+
+
+        if ( fromDate.isEmpty() || toDate.isEmpty() ) {
+
+            // Error , one or more editText are empty
+            Toast.makeText(KetSewaActivity.this,
+                    "Kolom yang Anda isikan tidak lengkap",
+                    Toast.LENGTH_SHORT).show();
+        }
+
+        else
+        {
+            // all editText are not empty
+            days = endDate.getTime() - startDate.getTime();
+            String fixDays = String.valueOf(TimeUnit.DAYS.convert(days, TimeUnit.MILLISECONDS));
+            Intent placeOrderIntent = new Intent(KetSewaActivity.this, InvoiceActivity.class);
+            placeOrderIntent.putExtra("days",fixDays);
+            placeOrderIntent.putExtra("index",position);
+            placeOrderIntent.putExtra("start",dateFormatter.format(startDate));
+            placeOrderIntent.putExtra("end",dateFormatter.format(endDate));
+            KetSewaActivity.this.startActivity(placeOrderIntent);
+        }
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
