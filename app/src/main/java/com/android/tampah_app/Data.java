@@ -13,6 +13,8 @@ public class Data {
 
     private static int position;
 
+    private static int countdate;
+
     public Data() {
 
     }
@@ -24,4 +26,5 @@ public class Data {
     public void setPosition(int position) {
         this.position = position;
     }
+
 }
