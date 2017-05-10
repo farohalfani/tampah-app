@@ -130,8 +130,6 @@ public class KetSewaActivity extends AppCompatActivity implements OnClickListene
                             "Tanggal yang Anda masukkan tidak valid",
                             Toast.LENGTH_SHORT).show();
                     bPlaceOrder.setEnabled(false);
-                } else {
-                    bPlaceOrder.setEnabled(true);
                 }
             }
 
